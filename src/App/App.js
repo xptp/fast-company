@@ -16,10 +16,14 @@ function App() {
     const newUsers = [...users];
     newUsers[i].bookmark = !newUsers[i].bookmark;
     setUser(newUsers);
-  }
+  };
   return (
     <div>
-      <Users handleDelete={handleDelete} hadleToggleBookMark={hadleToggleBookMark} users={users} />
+      <Users
+        handleDelete={handleDelete}
+        hadleToggleBookMark={hadleToggleBookMark}
+        users={users}
+      />
     </div>
   );
 }

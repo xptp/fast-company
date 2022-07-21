@@ -1,11 +1,13 @@
 import Qualities from "./qualitie";
 import Bookmark from "./bookmark";
+import React from "react";
+import PropTypes from "prop-types";
 
 const User = (props) => {
-  const { users, handleDelete, hadleToggleBookMark } = props;
+  const { handleDelete, hadleToggleBookMark, userCrop } = props;
   return (
     <>
-      {users.map((user) => (
+      {userCrop.map((user) => (
         <tr key={user._id}>
           <td>{user.name}</td>
           <td>
@@ -29,5 +31,10 @@ const User = (props) => {
       ))}
     </>
   );
+};
+User.propTypes = {
+  handleDelete: PropTypes.func.isRequired,
+  hadleToggleBookMark: PropTypes.func.isRequired,
+  userCrop: PropTypes.array.isRequired
 };
 export default User;

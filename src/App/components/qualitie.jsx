@@ -1,3 +1,5 @@
+import React from "react";
+import PropTypes from "prop-types";
 const Qualities = (props) => {
   const { user } = props;
   return (
@@ -12,5 +14,8 @@ const Qualities = (props) => {
       ))}
     </>
   );
+};
+Qualities.propTypes = {
+  user: PropTypes.object.isRequired
 };
 export default Qualities;

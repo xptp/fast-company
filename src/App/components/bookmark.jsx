@@ -1,5 +1,8 @@
+import React from "react";
+import PropTypes from "prop-types";
 const Bookmark = (props) => {
   const { hadleToggleBookMark, user } = props;
+  // console.log("dasdas", user);
   let xml;
   if (user.bookmark) {
     xml =
@@ -15,7 +18,7 @@ const Bookmark = (props) => {
         width="16"
         height="16"
         fill="currentColor"
-        class="bi bi-bookmark"
+        className="bi bi-bookmark"
         viewBox="0 0 16 16"
         onClick={() => hadleToggleBookMark(user._id)}
       >
@@ -23,5 +26,9 @@ const Bookmark = (props) => {
       </svg>
     </>
   );
+};
+Bookmark.propTypes = {
+  hadleToggleBookMark: PropTypes.func.isRequired,
+  user: PropTypes.object.isRequired
 };
 export default Bookmark;
